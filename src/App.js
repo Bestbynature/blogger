@@ -19,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs/:id" element={<BlogDetails />}/>
+        <Route path="/edit/:id" element={<Create />}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

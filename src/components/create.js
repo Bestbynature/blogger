@@ -1,17 +1,65 @@
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
 const Create = () => {
+
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('Tobi');
+  const [body, setBody] = useState('');
+  const [loading, setLoading] = useState(false)
+
+  const navigate  = useNavigate()
+  const { id } = useParams();
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true)
+
+   setTimeout(()=>{
+    const newBlog = { title, author, body }
+
+    const postUrl = 'http://localhost:8000/blogs'
+    
+    fetch(postUrl, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify(newBlog)
+    })
+    .then((res)=>{
+      res.json()
+      setLoading(false)
+      navigate('/')
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+   }, 3000)
+  }
+
+
   return ( 
     <div className="create">
       <h2 style={{textAlign: "center"}}>Add a new blog</h2>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Blog Title:
-          <input type="text" required/>
+          <input 
+          type="text" 
+          required
+          value={title}
+          onChange={(e)=>setTitle(e.target.value)}
+          
+          />
         </label>
 
         <label>
           Blog Author:
-          <select>
+          <select
+          value={author}
+          onChange={(e)=>setAuthor(e.target.value)}
+          >
             <option value="Tobi">Tobi</option>
             <option value="AyoOluwa">AyoOluwa</option>
             <option value="Emmanuel">Emmanuel</option>
@@ -20,10 +68,15 @@ const Create = () => {
 
         <label>
           Blog Body:
-          <textarea></textarea>
+          <textarea
+          rows={7}
+          value={body}
+          onChange={(e)=>setBody(e.target.value)}
+          ></textarea>
         </label>
 
-        <button type="submit">Submit a blog</button>
+        {!loading && <button type="submit">Submit a blog</button>}
+        {loading && <button type="submit" disabled>Posting your Blog...</button>}
       </form>
     </div>
    );

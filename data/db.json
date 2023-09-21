@@ -1,28 +1,16 @@
 {
   "blogs": [
     {
-      "title": "Exciting Adventures in Coding",
-      "body": "Embarking on my coding journey has been a thrilling experience. Learning new concepts, solving challenges, and building projects have filled my days with excitement.",
-      "author": "Alice Johnson",
-      "id": 1
+      "title": "New Title for my blog",
+      "author": "AyoOluwa",
+      "body": "This is the body for the blog",
+      "id": 8
     },
     {
-      "title": "Discovering the Wonders of Nature",
-      "body": "Exploring the great outdoors has always been a source of inspiration for me. From serene hikes to breathtaking landscapes, nature never ceases to amaze and teach valuable life lessons.",
-      "author": "Bob Smith",
-      "id": 2
-    },
-    {
-      "title": "The Joy of Cooking: A Culinary Adventure",
-      "body": "Diving into the world of cooking has brought immense joy to my life. Experimenting with flavors, creating delicious dishes, and sharing meals with loved ones have become cherished moments.",
-      "author": "Charlie Brown",
-      "id": 3
-    },
-    {
-      "title": "Exploring Cultural Riches Through Travel",
-      "body": "Traveling has opened my eyes to diverse cultures and traditions. Each journey is a unique tapestry of experiences, connecting with people worldwide and broadening my perspective.",
-      "author": "Diana Williams",
-      "id": 4
+      "title": "ajkfajavaafafaa",
+      "author": "Emmanuel",
+      "body": "KCjBcsajcnjcnaslk a.,aca",
+      "id": 9
     }
   ]
 }

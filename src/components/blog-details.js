@@ -1,14 +1,27 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "../hooks/use-fetch";
+import axios from "axios"
 
 const BlogDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const {
     blogs: blog,
     error,
     loading,
   } = useFetch(`http://localhost:8000/blogs/${id}`);
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:8000/blogs/${id}`)
+    .then((res)=>{
+      navigate('/')
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+
+  }
 
   return (
     <div className="blog-details">
@@ -21,7 +34,12 @@ const BlogDetails = () => {
           <h2>{blog.title}</h2>
           <p>{blog.author}</p>
           <div className="article-body">{blog.body}</div>
+
+          <button type="button" onClick={()=>handleDelete(blog.id)}>Delete this blog</button>
+
+          <Link to={`/edit/${blog.id}`}>Edit this blog</Link>
         </article>
+        
       )}
     </div>
   );
