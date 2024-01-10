@@ -1,13 +1,21 @@
-import './App.css';
 import Navbar from './Navbar';
+
 
 function App() {
   return (
     <div className="App">
-      <div className="content">
-        <h1>This is App component</h1>
+      <div id="content">
+        <h1 style={{ 
+    color: "red",
+    fontSize: "20px",
+    fontWeight: "bold",
+    textAlign: "right",
+    marginTop: "100px"
+}}>This is App component</h1>
+
 
         <Navbar />
+        
       </div>
      
     </div>

@@ -1,0 +1,45 @@
+p { 
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 100px;
+}
+
+.App {
+    border: 2px solid black;
+}
+
+
+.error {
+
+}
+
+
+
+h1 {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#login {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+}
