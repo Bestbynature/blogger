@@ -1,23 +1,13 @@
 import Navbar from './Navbar';
-
+import Home from './Home';
 
 function App() {
   return (
     <div className="App">
-      <div id="content">
-        <h1 style={{ 
-    color: "red",
-    fontSize: "20px",
-    fontWeight: "bold",
-    textAlign: "right",
-    marginTop: "100px"
-}}>This is App component</h1>
-
-
-        <Navbar />
-        
+      <Navbar />
+      <div className="content">
+        <Home />
       </div>
-     
     </div>
   );
 }
