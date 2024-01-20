@@ -18,29 +18,17 @@ const Home = () => {
     },
   ]);
 
-  const [course, setCourse] = useState('frontend')
+  const [course, setCourse] = useState("frontend");
 
-
-  // hooks in react
-  // useRef
-  // useState
-  // useLocation
-  // useEffect
-
-  useEffect(()=>{
-    console.log('use Effect ran')
-  }, [course])
-  // dependency array
-
-
+  useEffect(() => {
+    console.log("use Effect ran");
+  }, [course]);
 
   const handleDelete = (id) => {
+    const filteredBlogs = blogs.filter((blog, index) => blog.id !== id);
 
-    const filteredBlogs = blogs.filter((blog, index)=> blog.id !== id)
-
-    setBlogs(filteredBlogs)
-  }
-
+    setBlogs(filteredBlogs);
+  };
 
   return (
     <div className="home">
@@ -48,13 +36,12 @@ const Home = () => {
       <Bloglist blogs={blogs} handleDelete={handleDelete} />
       {/* <button onClick={()=>setCourse('backend')}>click to change course</button> */}
 
-      <p>{ course }</p>
+      <p>{course}</p>
     </div>
   );
 };
 
 export default Home;
-
 
 // Create a delete button for each blog post
 // create a function that will handle the delete button
