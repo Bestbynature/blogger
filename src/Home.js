@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Bloglist from "./components/bloglist";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([
@@ -17,16 +18,37 @@ const Home = () => {
     },
   ]);
 
+  const [course, setCourse] = useState('frontend')
+
+
+  // hooks in react
+  // useRef
+  // useState
+  // useLocation
+  // useEffect
+
+  useEffect(()=>{
+    console.log('use Effect ran')
+  }, [course])
+  // dependency array
+
+
+
+  const handleDelete = (id) => {
+
+    const filteredBlogs = blogs.filter((blog, index)=> blog.id !== id)
+
+    setBlogs(filteredBlogs)
+  }
+
 
   return (
     <div className="home">
       <h2>Home Component</h2>
-      {blogs.map((blog, index) => (
-        <div className="blog-preview" key={blog.id}>
-          <h2>Title is {blog.title}</h2>
-          <p>Written by {blog.author}</p>
-        </div>
-      ))}
+      <Bloglist blogs={blogs} handleDelete={handleDelete} />
+      {/* <button onClick={()=>setCourse('backend')}>click to change course</button> */}
+
+      <p>{ course }</p>
     </div>
   );
 };
@@ -38,3 +60,4 @@ export default Home;
 // create a function that will handle the delete button
 // create a bloglist component that will be used to display the list of blogs
 // introduce useEffect hook
+// creating a dummy server.
