@@ -1,29 +1,41 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Rubik+Burned&display=swap');
 /* base styles */
 
 /* IconStyles.css */
 
-/* .plug {
-  font-family: 'Quicksand', sans-serif;
+/* .blog-plug {
+  font-family: 'Rubik Burned', system-ui;
+
+} */
+
+nav > h1 {
+  font-family: 'Rubik Burned', system-ui;
+
+}
+
+ .plug {
+  font-family: 'Rubik Burned', system-ui;
   font-weight: 400;
   font-size: 1.2rem;
   color: greenyellow;
   margin: 0;
   padding: 0;
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
   transition: transform 0.3s ease; 
 }
 
 .plug:hover {
-  transform: rotate(45deg) scale(1.5); 
-} */
+  transform: rotate(45deg) scale(2.5); 
+}
 
 /* End IconStyles.css */
 
 
 
-/* * {
+
+* {
   margin: 0;
   font-family: "Quicksand";
   color: #333;
@@ -42,9 +54,11 @@ nav > h1 {
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
+
 .navbar h1 {
   color: #f1356d;
 }
+
 .navbar .links {
   margin-left: auto;
 }
@@ -53,26 +67,38 @@ nav > h1 {
   text-decoration: none;
   padding: 6px;
 }
+
+.navbar > a
+
 .navbar a:hover {
   color: #f1356d;
 }
+
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-} */
+} 
+
+
+
 
 /* blog previews / list */
-/* .blog-preview {
+
+
+/* Integrated Development Environment */ 
+
+
+.blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
 }
 .blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 5px 3px 10px rgba(222, 135, 135, 0.7);
 }
 .blog-preview h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
-} */
+}
