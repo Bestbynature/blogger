@@ -2,27 +2,24 @@ import { useEffect, useState } from "react";
 import Bloglist from "./components/bloglist";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([
-    { id: 1, author: "Tobi", title: "My new website", body: "lorem ipsum..." },
-    {
-      id: 2,
-      author: "Emmanuel",
-      title: "Welcome party!",
-      body: "lorem ipsum...",
-    },
-    {
-      id: 3,
-      author: "Ayooluwa",
-      title: "Web dev top tips",
-      body: "lorem ipsum...",
-    },
-  ]);
+  const [blogs, setBlogs] = useState(null);
 
   const [course, setCourse] = useState("frontend");
 
+
+
+
+
   useEffect(() => {
-    console.log("use Effect ran");
-  }, [course]);
+   fetch('http://localhost:8000/blogs') //slaughtering
+   .then((response)=>{
+    return response.json()
+   })
+   .then((item)=>{
+    // console.log(item)
+    setBlogs(item)
+   })
+  }, []); // dependency array
 
   const handleDelete = (id) => {
     const filteredBlogs = blogs.filter((blog, index) => blog.id !== id);
@@ -33,7 +30,8 @@ const Home = () => {
   return (
     <div className="home">
       <h2>Home Component</h2>
-      <Bloglist blogs={blogs} handleDelete={handleDelete} />
+
+      {blogs && <Bloglist blogs={blogs} handleDelete={handleDelete} />}
       {/* <button onClick={()=>setCourse('backend')}>click to change course</button> */}
 
       <p>{course}</p>
