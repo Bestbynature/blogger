@@ -130,16 +130,15 @@ nav > h1 {
 
 /* blog details page */
 
-/*
 
 .blog-details h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 10px;
 }
-.blog-details div {
+/* .blog-details div {
   margin: 20px 0;
-}
+} */
 .blog-details button {
   background: #f1356d;
   color: #fff;
@@ -149,12 +148,21 @@ nav > h1 {
   cursor: pointer;
 }
 
-*/
+.article-body {
+  text-align: center;
+  font-size: 2rem;
+  border: 2px solid magenta;
+  padding: 2rem;
+  line-height: 3rem;
+  background-color: bisque;
+  max-width: 70%;
+  margin: 5px auto;
+}
 
 
 /* create new blog form */
 
-/*
+
 .create {
   max-width: 400px;
   margin: 0 auto;
@@ -176,6 +184,7 @@ nav > h1 {
   border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
+  border-radius: 5px;
 }
 .create button {
   background: #f1356d;
@@ -184,6 +193,9 @@ nav > h1 {
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
-*/
+.create button:hover {
+  filter: invert(100%);
+}
