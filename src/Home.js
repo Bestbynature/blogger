@@ -3,36 +3,45 @@ import Bloglist from "./components/bloglist";
 
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true); //true false
 
   const [course, setCourse] = useState("frontend");
 
 
 
-
+// catch
 
   useEffect(() => {
-   fetch('http://localhost:8000/blogs') //slaughtering
+   setTimeout(()=>{
+    fetch('http://localhost:8000/blogs')
    .then((response)=>{
+    if(!response.ok){
+      throw Error('Server is busy. Please try again later.')
+    }
     return response.json()
    })
    .then((item)=>{
-    // console.log(item)
     setBlogs(item)
+    setLoading(false)
    })
-  }, []); // dependency array
-
-  const handleDelete = (id) => {
-    const filteredBlogs = blogs.filter((blog, index) => blog.id !== id);
-
-    setBlogs(filteredBlogs);
-  };
+   .catch((err)=>{
+    console.log(err.message)
+    setError(err.message)
+    setLoading(false)
+   })
+   }, 3000) 
+  }, []);
 
   return (
     <div className="home">
       <h2>Home Component</h2>
 
-      {blogs && <Bloglist blogs={blogs} handleDelete={handleDelete} />}
-      {/* <button onClick={()=>setCourse('backend')}>click to change course</button> */}
+      {loading && <div>Your item is being fetched</div>}
+
+      {error && <div className="error">{error}</div>}
+
+      {blogs && <Bloglist blogs={blogs} />}
 
       <p>{course}</p>
     </div>
@@ -40,9 +49,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// Create a delete button for each blog post
-// create a function that will handle the delete button
-// create a bloglist component that will be used to display the list of blogs
-// introduce useEffect hook
-// creating a dummy server.
