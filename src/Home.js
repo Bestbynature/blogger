@@ -25,13 +25,13 @@ const Home = () => {
     setBlogs(item)
     setLoading(false)
    })
-   .catch((err)=>{
-    console.log(err.message)
-    setError(err.message)
+   .catch((e)=>{
+    console.log(e.message)
+    setError(e.message)
     setLoading(false)
    })
    }, 3000) 
-  }, []);
+  }, []); // empty dependency array => run once
 
   return (
     <div className="home">
