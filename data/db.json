@@ -57,11 +57,10 @@
     {
       "title": "My tenth blog",
       "body": "This is my tenth blog post",
-      "author": "Jane Doe",
+      "author": "Jane Dow",
       "id": 10
     }
-  ],
-  "sales": []
+  ]
 
 }
 
