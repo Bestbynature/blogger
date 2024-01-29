@@ -1,38 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Bloglist from "./components/bloglist";
+import useFetch from "./hooks/use-fetch";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true); //true false
+  
 
   const [course, setCourse] = useState("frontend");
 
+  const { blogs, error, loading } = useFetch('http://localhost:8000/blogs');
 
-
-// catch
-
-  useEffect(() => {
-   setTimeout(()=>{
-    fetch('http://localhost:8000/blogs')
-   .then((response)=>{
-    if(!response.ok){
-      throw Error('Server is busy. Please try again later.')
-    }
-    return response.json()
-   })
-   .then((item)=>{
-    setBlogs(item)
-    setLoading(false)
-   })
-   .catch((e)=>{
-    console.log(e.message)
-    setError(e.message)
-    setLoading(false)
-   })
-   }, 3000) 
-  }, []); // empty dependency array => run once
-
+  
   return (
     <div className="home">
       <h2>Home Component</h2>
