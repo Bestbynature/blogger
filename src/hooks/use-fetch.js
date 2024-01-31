@@ -25,8 +25,8 @@ const useFetch = (url) => {
      setError(e.message)
      setLoading(false)
     })
-    }, 3000) 
-   }, []);
+    }, 1000) 
+   }, [url]); //include url as a dependency to revent infinite loop
 
    return  { blogs, error, loading }
  

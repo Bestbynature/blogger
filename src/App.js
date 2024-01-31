@@ -7,12 +7,10 @@ import Create from "./components/create";
 import NotFound from "./components/not-found";
 
 function App() {
-  const heading = "The blog Heading";
-  const heading2 = "The second heading";
 
   return (
     <div className="App">
-      <Navbar plastic={heading} short={heading2} />
+      <Navbar/>
 
       <Routes>
         <Route path="/" element={<Home />} />

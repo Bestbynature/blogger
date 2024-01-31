@@ -1,6 +1,6 @@
 const Create = () => {
   return ( 
-    <div className="new">
+    <div className="create">
       <h2>Add a new blog</h2>
       
     </div>

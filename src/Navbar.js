@@ -2,20 +2,13 @@ import { FaPlugCircleBolt } from "react-icons/fa6";
 import { FaSearchPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Navbar = (props) => {
-
-  console.log('props in the navbare are as follows', props)
-
-  const plastic = props.plastic
-  const short = props.short
-
+const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h1 className="blog-plug">{plastic}<FaPlugCircleBolt className="plug"/></h1>
+      <h1 className="blog-plug">Your Blog Plug<FaPlugCircleBolt className="plug"/></h1>
       <div className="links">
         <Link to="/">Home</Link>
-        {/* <a href="/">Home</a> */}
         <Link to="/create" style={{ 
           color: 'white', 
           backgroundColor: '#f1356d',
