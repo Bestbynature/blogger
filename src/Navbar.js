@@ -8,6 +8,8 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 className="blog-plug">Your Blog Plug<FaPlugCircleBolt className="plug"/></h1>
       <div className="links">
+      <p>click <Link to="https://www.google.com">here </Link> to go to google.com</p>
+
         <Link to="/">Home</Link>
         <Link to="/create" style={{ 
           color: 'white', 
