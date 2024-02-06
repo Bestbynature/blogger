@@ -26,7 +26,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-**[Blogger](https://blogger-chinko.vercel.app/)** is a web application for creating and sharing blogs. It is a platform where users can create, read, update, and delete blogs. It is built with React for the frontend and uses json server to serve the data to port 8000. The application is hosted on Vercel.
+**[Blogger](https://blogger-express.vercel.app/)** is a web application for creating and sharing blogs. It is a platform where users can create, read, update, and delete blogs. It is built with React for the frontend and uses json server to serve the data to port 8000. The application is hosted on Vercel.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,7 +60,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-### [Blogger](https://blogger-chinko.vercel.app/)
+### [Blogger](https://blogger-express.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
