@@ -6,7 +6,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+      <Link to={'/'}>
+      <img src="logo192.png" alt="React Logo" className="logo"/>
       <h1 className="blog-plug">Your Blog Plug<FaPlugCircleBolt className="plug"/></h1>
+      </Link>
+     
+
+
       <div className="links">
 
         <Link to="/">Home</Link>

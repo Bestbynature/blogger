@@ -9,7 +9,10 @@ const Home = () => {
 
   const { blogs, error, loading } = useFetch('http://localhost:8000/blogs');
 
-  
+  const secret = process.env.REACT_API
+
+  console.log(secret)
+
   return (
     <div className="home">
       <h2>Home Component</h2>

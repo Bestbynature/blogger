@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Create = () => {
@@ -11,6 +11,23 @@ const Create = () => {
   const navigate  = useNavigate()
   const { id } = useParams();
 
+  useEffect(()=>{
+    if(id){
+      fetch(`http://localhost:8000/blogs/${id}`)
+      .then((res)=>{
+        return res.json()
+      })
+      .then((data)=>{
+        setTitle(data.title)
+        setAuthor(data.author)
+        setBody(data.body)
+
+      })
+    }
+  }, [id])
+
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,9 +37,12 @@ const Create = () => {
     const newBlog = { title, author, body }
 
     const postUrl = 'http://localhost:8000/blogs'
-    
-    fetch(postUrl, {
-      method: 'POST',
+    const putUrl = `http://localhost:8000/blogs/${id}`
+
+    const resolvedUrl = id ? putUrl : postUrl
+
+    fetch(resolvedUrl, {
+      method: id ? 'PUT' : 'POST',
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify(newBlog)
     })
@@ -37,10 +57,11 @@ const Create = () => {
    }, 3000)
   }
 
-
   return ( 
     <div className="create">
-      <h2 style={{textAlign: "center"}}>Add a new blog</h2>
+      <h2 style={{textAlign: "center"}}>
+        {id ? `Edit blog number ${id}` :  'Add a new blog'}
+        </h2>
 
       <form onSubmit={handleSubmit}>
         <label>
@@ -75,7 +96,11 @@ const Create = () => {
           ></textarea>
         </label>
 
-        {!loading && <button type="submit">Submit a blog</button>}
+        {!loading && <button type="submit">
+
+          {id ? 'Update your blog' : 'Submit a blog'}
+          
+          </button>}
         {loading && <button type="submit" disabled>Posting your Blog...</button>}
       </form>
     </div>
