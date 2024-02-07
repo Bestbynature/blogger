@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Rubik+Burned&display=swap');
+
 /* base styles */
 
 /* IconStyles.css */
@@ -16,38 +17,34 @@
 
 nav > h1 {
   font-family: 'Rubik Burned', system-ui;
-
 }
 
- .plug {
+.plug {
   font-family: 'Rubik Burned', system-ui;
   font-weight: 400;
   font-size: 1.2rem;
   color: greenyellow;
   margin: 0;
   padding: 0;
+
   /* transform: rotate(45deg); */
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .plug:hover {
-  transform: rotate(45deg) scale(2.5); 
+  transform: rotate(45deg) scale(2.5);
 }
 
 /* End IconStyles.css */
 
-
-
-
 * {
   margin: 0;
-  font-family: "Quicksand";
+  font-family: "Quicksand", system-ui;
   color: #333;
 }
 
-
 nav > h1 {
-    font-family: 'Lemon', serif;
+  font-family: 'Lemon', serif;
 }
 
 .navbar {
@@ -66,15 +63,14 @@ nav > h1 {
 .navbar .links {
   margin-left: auto;
 }
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
 }
 
-.navbar > a
-
-.navbar a:hover {
+.navbar > a .navbar a:hover {
   color: #f1356d;
 }
 
@@ -82,7 +78,7 @@ nav > h1 {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-} 
+}
 
 
 
@@ -90,17 +86,18 @@ nav > h1 {
 /* blog previews / list */
 
 
-/* Integrated Development Environment */ 
-
+/* Integrated Development Environment */
 
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
 }
+
 .blog-preview:hover {
   box-shadow: 5px 3px 10px rgba(222, 135, 135, 0.7);
 }
+
 .blog-preview h2 {
   font-size: 20px;
   color: #f1356d;
@@ -118,7 +115,7 @@ nav > h1 {
 }
 
 .blog-preview > button:hover {
-  filter: invert(100%)
+  filter: invert(100%);
 }
 
 .error {
@@ -127,19 +124,18 @@ nav > h1 {
   padding: 10px;
 }
 
-
-.blog-preview a{
+.blog-preview a {
   text-decoration: none;
 }
 
 /* blog details page */
-
 
 .blog-details h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 10px;
 }
+
 /* .blog-details div {
   margin: 20px 0;
 } */
@@ -166,22 +162,26 @@ nav > h1 {
 
 /* create new blog form */
 
-
 .create {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
+
 .create label {
   text-align: left;
   display: block;
 }
+
 .create h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 30px;
 }
-.create input, .create textarea, .create select {
+
+.create input,
+.create textarea,
+.create select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -190,6 +190,7 @@ nav > h1 {
   display: block;
   border-radius: 5px;
 }
+
 .create button {
   background: #f1356d;
   color: #fff;

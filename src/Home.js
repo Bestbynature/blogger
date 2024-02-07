@@ -1,16 +1,17 @@
-import { useState } from "react";
-import Bloglist from "./components/bloglist";
-import useFetch from "./hooks/use-fetch";
+// import { useState } from 'react';
+import Bloglist from './components/bloglist';
+import useFetch from './hooks/use-fetch';
 
 const Home = () => {
-  const [course, setCourse] = useState("frontend");
+  // const [course, setCourse] = useState('frontend');
 
-  const { blogs, error, loading } = useFetch("http://localhost:8000/blogs");
+  const course = 'frontend';
 
-  const secret = process.env.REACT_APP_API;
+  const { blogs, error, loading } = useFetch('http://localhost:8000/blogs');
 
-  console.log(secret);
+  // const secret = process.env.REACT_APP_API;
 
+  // console.log(secret);
 
   return (
     <div className="home">
