@@ -3,15 +3,14 @@ import Bloglist from "./components/bloglist";
 import useFetch from "./hooks/use-fetch";
 
 const Home = () => {
-  
-
   const [course, setCourse] = useState("frontend");
 
-  const { blogs, error, loading } = useFetch('http://localhost:8000/blogs');
+  const { blogs, error, loading } = useFetch("http://localhost:8000/blogs");
 
-  const secret = process.env.REACT_API
+  const secret = process.env.REACT_APP_API;
 
-  console.log(secret)
+  console.log(secret);
+
 
   return (
     <div className="home">
