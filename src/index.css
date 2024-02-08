@@ -25,6 +25,7 @@ nav > h1 {
   color: greenyellow;
   margin: 0;
   padding: 0;
+
   /* transform: rotate(45deg); */
   transition: transform 0.3s ease;
 }
@@ -196,6 +197,7 @@ nav > h1 {
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
   /* grid-template-columns: 60% 20% 20%; */
   gap: 5px;
 }
