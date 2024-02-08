@@ -204,3 +204,31 @@ nav > h1 {
 .create button:hover {
   filter: invert(100%);
 }
+
+
+.wrapper {
+  border: 2px solid black;
+  margin: 1em;
+  height: 5rem;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 60% 20% 20%; */
+  gap: 5px;
+  /* justify-content: space-between;
+  align-items: center; */
+  /* flex-direction: column; */
+}
+
+.red {
+  border: 2px solid red
+}
+
+.blue {
+  border: 2px solid blue
+}
+
+.orange {
+  border: 2px solid orange;
+  margin-right: 5px;
+}

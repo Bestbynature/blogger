@@ -17,6 +17,15 @@ const Home = () => {
     <div className="home">
       <h2>Home Component</h2>
 
+      <div className="wrapper">
+        <div className="red">
+          red
+          sjkfkvkjvjdsbvksjvbsdkjvbsdvk
+        </div>
+        <div className="blue">blue</div>
+        <div className="orange">orange</div>
+      </div>
+
       {loading && <div>Your item is being fetched</div>}
 
       {error && <div className="error">{error}</div>}
