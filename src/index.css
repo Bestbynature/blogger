@@ -43,9 +43,9 @@ nav > h1 {
   color: #333;
 }
 
-nav > h1 {
+/* nav > h1 {
   font-family: 'Lemon', serif;
-}
+} */
 
 .navbar {
   padding: 20px;
@@ -68,6 +68,10 @@ nav > h1 {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+}
+
+.blog-preview a {
+  text-decoration: none;
 }
 
 .navbar > a .navbar a:hover {
@@ -114,6 +118,25 @@ nav > h1 {
   transition: all 0.5s ease-in-out;
 }
 
+.blog-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.create button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
 .blog-preview > button:hover {
   filter: invert(100%);
 }
@@ -124,9 +147,7 @@ nav > h1 {
   padding: 10px;
 }
 
-.blog-preview a {
-  text-decoration: none;
-}
+
 
 /* blog details page */
 
@@ -139,14 +160,6 @@ nav > h1 {
 /* .blog-details div {
   margin: 20px 0;
 } */
-.blog-details button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
 
 .article-body {
   text-align: center;
@@ -191,20 +204,9 @@ nav > h1 {
   border-radius: 5px;
 }
 
-.create button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
-
 .create button:hover {
   filter: invert(100%);
 }
-
 
 .wrapper {
   border: 2px solid black;
@@ -213,19 +215,22 @@ nav > h1 {
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
   /* grid-template-columns: 60% 20% 20%; */
   gap: 5px;
+
   /* justify-content: space-between;
   align-items: center; */
+
   /* flex-direction: column; */
 }
 
 .red {
-  border: 2px solid red
+  border: 2px solid red;
 }
 
 .blue {
-  border: 2px solid blue
+  border: 2px solid blue;
 }
 
 .orange {
