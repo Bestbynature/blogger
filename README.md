@@ -198,3 +198,58 @@ We would like to use this medium to appreciate [SamFancy Compusolutions](#) for 
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- the lines below should not be in your readme files. It's just a step-by-step linter instruction -->
+
+<!-- setting up linters in your projects -->
+
+ ## 🚀 Linters <a name="linters"></a>
+
+To set up linters in your project, follow these steps:
+
+- **[Step 1](#step-1)**
+- **[Step 2](#step-2)**
+- **[Step 3](#step-3)**
+- **[Step 4](#step-4)**
+- **[Step 5](#step-5)**
+- **[Step 6](#step-6)**
+
+### Step 1 <a name="step-1"></a>
+create a .github/workflows folder and add a copy of [.github/workflows/linters.yml](.github/workflows/linters.yml) to that folder.
+Remember to use the file linked above
+Remember that .github folder starts with a dot.
+
+### Step 2 <a name="step-2"></a>
+create a .eslintrc.json file and add a copy of [.eslintrc.json](.eslintrc.json) to that folder.
+
+### Step 3 <a name="step-3"></a>
+create a .stylelintrc.json file and add a copy of [.stylelintrc.json](.stylelintrc.json) to that folder.
+
+### Step 4 <a name="step-4"></a>
+create a .babelrc file and add a copy of [.babelrc](.babelrc) to that folder.
+
+### Step 5 <a name="step-5"></a>
+
+Run the following commands to install the necessary packages:
+
+```sh
+npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x  @babel/preset-react@7.x @babel/preset-react@7.x
+```
+
+```sh
+npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+```
+
+### Step 6 <a name="step-6"></a>
+
+for Javascript files, run the following command to check for errors:
+
+```sh
+npx eslint "**/*.{js,jsx}" --fix
+```
+
+for CSS files, run the following command to check for errors:
+
+```sh
+npx stylelint "**/*.{css,scss}" --fix
+```
