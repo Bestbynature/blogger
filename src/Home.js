@@ -1,9 +1,9 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import Bloglist from './components/bloglist';
 import useFetch from './hooks/use-fetch';
 
 const Home = () => {
-  const [course, setCourse] = useState('frontend');
+  // const [course, setCourse] = useState('frontend');
 
   // const course = 'frontend';
 
@@ -30,9 +30,9 @@ const Home = () => {
 
       {error && <div className="error">{error}</div>}
 
-      {blogs && <Bloglist blogs={blogs}/>}
+      {blogs && <Bloglist blogs={blogs} />}
 
-      <p>{course}</p>
+      {/* <p>{course}</p> */}
     </div>
   );
 };
