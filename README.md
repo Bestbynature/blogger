@@ -199,7 +199,7 @@ This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- the lines below should not be in your readme files. It's just a step-by-step linter instruction -->
+<!-- the lines below should not be in your readme files. It's just a step-by-step linter instruction. PLEASE DON'T INCLUDE IT -->
 
 <!-- setting up linters in your projects -->
 
