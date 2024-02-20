@@ -1,6 +1,6 @@
 import { FaPlugCircleBolt } from 'react-icons/fa6';
-import { FaSearchPlus } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+// import { FaSearchPlus } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <nav className="navbar">
@@ -14,7 +14,7 @@ const Navbar = () => (
 
     <div className="links">
 
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link>
       <Link
         to="/create"
         style={{
@@ -26,7 +26,16 @@ const Navbar = () => (
         New Blog
         {' '}
         <FaSearchPlus />
-      </Link>
+      </Link> */}
+      <NavLink to="/" activeClassName="active" exact>
+        Home
+      </NavLink>
+      <NavLink to="/create" activeClassName="active">
+        Add new
+      </NavLink>
+      <NavLink to="/contact" activeClassName="active">
+        Contact
+      </NavLink>
     </div>
   </nav>
 );

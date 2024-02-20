@@ -69,9 +69,9 @@ nav > h1 {
   text-decoration: none;
 }
 
-.navbar > a .navbar a:hover {
+/* .navbar > a .navbar a:hover {
   color: #f1356d;
-}
+} */
 
 .content {
   max-width: 600px;
@@ -202,15 +202,8 @@ nav > h1 {
   gap: 5px;
 }
 
-.red {
-  border: 2px solid red;
-}
-
-.blue {
-  border: 2px solid blue;
-}
-
-.orange {
-  border: 2px solid orange;
-  margin-right: 5px;
+.active {
+  color: #f1356d;
+  border-bottom: 2px solid #f1356d;
+  transition: color 0.5s ease-in-out, border-bottom 0.5s ease-in-out;
 }
