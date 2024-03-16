@@ -1,14 +1,23 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import {
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { postBlogs } from '../redux/blogs/blogsSlice';
 
 const Create = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('Tobi');
   const [body, setBody] = useState('');
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const { id } = useParams();
+
+  const dispatch = useDispatch();
+
+  const { loading } = useSelector((store) => store.blogs);
 
   useEffect(() => {
     if (id) {
@@ -24,29 +33,35 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+    const newBlog = { title, author, body };
 
-    setTimeout(() => {
-      const newBlog = { title, author, body };
+    dispatch(postBlogs(newBlog));
 
-      const postUrl = 'http://localhost:8000/blogs';
-      const putUrl = `http://localhost:8000/blogs/${id}`;
+    navigate('/');
 
-      const resolvedUrl = id ? putUrl : postUrl;
+    // setLoading(true);
 
-      fetch(resolvedUrl, {
-        method: id ? 'PUT' : 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newBlog),
-      })
-        .then((res) => {
-          res.json();
-          setLoading(false);
-          navigate('/');
-        })
-        .catch(() => {
-        });
-    }, 3000);
+    // setTimeout(() => {
+    //   const newBlog = { title, author, body };
+
+    //   const postUrl = 'http://localhost:8000/blogs';
+    //   const putUrl = `http://localhost:8000/blogs/${id}`;
+
+    //   const resolvedUrl = id ? putUrl : postUrl;
+
+    //   fetch(resolvedUrl, {
+    //     method: id ? 'PUT' : 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(newBlog),
+    //   })
+    //     .then((res) => {
+    //       res.json();
+    //       setLoading(false);
+    //       navigate('/');
+    //     })
+    //     .catch(() => {
+    //     });
+    // }, 3000);
   };
 
   return (

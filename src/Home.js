@@ -1,17 +1,25 @@
-// import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import Bloglist from './components/bloglist';
-import useFetch from './hooks/use-fetch';
+import { fetchBlogs, increaseCount } from './redux/blogs/blogsSlice';
+// import useFetch from './hooks/use-fetch';
 
 const Home = () => {
-  // const [course, setCourse] = useState('frontend');
+  const dispatch = useDispatch();
 
-  // const course = 'frontend';
+  const {
+    blogs, error, loading, count,
+  } = useSelector((store) => store.blogs);
 
-  const { blogs, error, loading } = useFetch('http://localhost:8000/blogs');
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch, blogs]);
 
-  // const secret = process.env.REACT_APP_API;
+  const handleIncrease = () => {
+    dispatch(increaseCount());
+  };
 
-  // console.log(secret);
+  // const { blogs, error, loading } = useFetch('http://localhost:8000/blogs');
 
   return (
     <div className="home">
@@ -21,10 +29,14 @@ const Home = () => {
 
       {error && <div className="error">{error}</div>}
 
+      <div className="redux-test">
+        <p>{count}</p>
+        <button type="button" onClick={handleIncrease}>Click to increase</button>
+      </div>
+
       {blogs && <Bloglist blogs={blogs} />}
 
     </div>
   );
 };
-
 export default Home;

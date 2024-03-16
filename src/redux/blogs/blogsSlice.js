@@ -8,6 +8,8 @@ const initialState = {
   status: 'idle',
   error: null,
   loading: false,
+  count: 0,
+  name: 'Gideon',
 };
 
 export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
@@ -19,9 +21,9 @@ export const fetchBlogs = createAsyncThunk('blogs/fetchBlogs', async () => {
   }
 });
 
-export const postBlogs = createAsyncThunk('blogs/postBlogs', async () => {
+export const postBlogs = createAsyncThunk('blogs/postBlogs', async (newBlog) => {
   try {
-    const response = await axios.post(url);
+    const response = await axios.post(url, newBlog);
     return response.data;
   } catch (error) {
     return isRejectedWithValue(error.response.data);
@@ -31,8 +33,14 @@ export const postBlogs = createAsyncThunk('blogs/postBlogs', async () => {
 const blogsSlice = createSlice({
   name: 'blogs',
   initialState,
-  reducer: {},
-  // immer library spread operator
+  reducers: {
+    increaseCount: (state) => {
+      state.count += 1;
+    },
+    decreaseCount: (state) => {
+      state.count -= 1;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBlogs.pending, (state) => (
@@ -44,10 +52,18 @@ const blogsSlice = createSlice({
       .addCase(fetchBlogs.rejected, (state, action) => (
         { ...state, status: 'failed', error: action.error.message }
       ))
-      .addCase(postBlogs.pending, () => {})
-      .addCase(postBlogs.fulfilled, () => {})
-      .addCase(postBlogs.rejected, () => {});
+      .addCase(postBlogs.pending, (state) => (
+        { ...state, loading: false }
+      ))
+      .addCase(postBlogs.fulfilled, (state, action) => (
+        {
+          ...state, status: 'succeeded', loading: false, blogs: [...state.blogs, action.payload],
+        }
+      ));
+  // .addCase(postBlogs.rejected, (state) => {});
   },
 });
 
 export default blogsSlice.reducer;
+
+export const { increaseCount, decreaseCount } = blogsSlice.actions;
